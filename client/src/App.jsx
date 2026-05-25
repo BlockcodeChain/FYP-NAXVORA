@@ -12,7 +12,7 @@ import { Toaster } from "react-hot-toast";
 import Interviewpage from "./pages/Interviewpage"
 import ScrollToTop from "./components/ScrollToTop";
 
-export const ServerUrl = "http://localhost:8000";
+export const ServerUrl = import.meta.env.VITE_API_URL;
 
 const App = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const App = () => {
     const getUser = async () => {
       try {
         const result = await axios.get(
-          ServerUrl + "/api/user/current-user",
+      `${ServerUrl}/api/user/current-user`,
           {
             withCredentials: true,
           }

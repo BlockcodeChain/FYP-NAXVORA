@@ -12,7 +12,7 @@ import {
   BsCheckCircleFill,
 } from "react-icons/bs";
 
-const SERVER_URL = "http://localhost:8000";
+const  SERVER_URL = import.meta.env.VITE_API_URL;
 
 const Step1SetUp = ({ onStart }) => {
   const [role, setRole] = useState("");
